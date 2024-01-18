@@ -59,7 +59,7 @@
       mode: '0755'
   - name: send by scp docker-compose file to remote host
     copy:
-      src: ../docker-compose.global.yml
+      src: docker-compose.global.yml
       dest: /home/admin/docker-compose.global.yml
       owner: admin
       group: admin
