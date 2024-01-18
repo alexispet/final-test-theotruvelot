@@ -1,0 +1,19 @@
+name: ansible
+on: workflow_dispatch
+
+jobs:
+    triger-ansible:
+        runs-on: ubuntu-latest
+        if: github.ref_name == 'develop' || github.ref_name == 'main'
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4  
+            - name: Run playbook
+              uses: dawidd6/action-ansible-playbook@v2
+              with:
+                playbook: ansible.playbook.yml
+                inventory: inventory.ini
+                directory: ./ansible
+                key: ${{secrets.SSH_PRIVATE_KEY}}
+                options:
+                    --extra-vars env=${{github.ref_name}}
