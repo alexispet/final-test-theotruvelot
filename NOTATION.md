@@ -1,15 +1,15 @@
 # Notation
 
-- [ ] Vous avez un Dockerfile permettant de créer une image contenant l’application prête à l’emploi
-- [ ] Vous avez docker-compose.yml permettant de travailler sur le projet en local
-- [ ] Vous avez un script docker entrypoint qui exécute le script d’import de BDD
-- [ ] Vous avez un script docker entrypoint qui installe les dépendances seulement en dev
-- [ ] Vous faites du multi stage build pour alléger le poids final de votre image
-- [ ] Dans un workflow GitHub, vous lancez les tests
-- [ ] Dans un workflow GitHub, vous construisez et envoyez l’image docker de l’application sur un registry
+- [x] Vous avez un Dockerfile permettant de créer une image contenant l’application prête à l’emploi
+- [x] Vous avez docker-compose.yml permettant de travailler sur le projet en local
+- [x] Vous avez un script docker entrypoint qui exécute le script d’import de BDD
+- [x] Vous avez un script docker entrypoint qui installe les dépendances seulement en dev
+- [x] Vous faites du multi stage build pour alléger le poids final de votre image
+- [x] Dans un workflow GitHub, vous lancez les tests
+- [x] Dans un workflow GitHub, vous construisez et envoyez l’image docker de l’application sur un registry
 - [ ] Dans un workflow GitHub, vous lancez un audit de sécurité
-- [ ] Les identifiants de connexion à la base de données sont passés en environnement
-- [ ] Les identifiants de connexion à la base de données de prod ne sont jamais visibles dans le code versionné
+- [x] Les identifiants de connexion à la base de données sont passés en environnement
+- [x] Les identifiants de connexion à la base de données de prod ne sont jamais visibles dans le code versionné
 - [ ] Vous avez eslint de fonctionnel en local et sur le workflow GitHub
 - [ ] Vous avez docker-compose.prod.yml permettant de lancer l’application en mode prod
 - [ ] Sur le serveur, l’application de production est accessible et fonctionnelle sur le port 80
