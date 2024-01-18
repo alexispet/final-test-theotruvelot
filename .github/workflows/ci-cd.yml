@@ -39,7 +39,7 @@ jobs:
     steps:
         - uses: actions/checkout@v4
         - name: Run ESLint
-          run: eslint . 
+          run: npx eslint . --ext .js
     
   # lint:
   #   runs-on: ubuntu-latest
