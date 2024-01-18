@@ -59,14 +59,14 @@
       mode: '0755'
   - name: send by scp docker-compose file to remote host
     copy:
-      src: ../../docker-compose.global.yml
+      src: /home/runner/work/final-test-theotruvelot/final-test-theotruvelot/docker-compose.global.yml
       dest: /home/admin/docker-compose.global.yml
       owner: admin
       group: admin
       mode: '0755'
   - name: send by scp docker-compose file to remote host
     copy:
-      src: ../docker-compose.{{ env }}.yml
+      src: ../../docker-compose.{{ env }}.yml
       dest: /home/admin/{{ env }}/docker-compose.{{ env }}.yml
       owner: admin
       group: admin
