@@ -1,5 +1,5 @@
 name: ansible
-on: workflow_dispatch
+on: [workflow_dispatch]
 
 jobs:
     triger-ansible:
@@ -16,4 +16,5 @@ jobs:
                 directory: ./ansible
                 key: ${{secrets.SSH_PRIVATE_KEY}}
                 options:
+                    --inventory inventory.ini
                     --extra-vars env=${{github.ref_name}}
