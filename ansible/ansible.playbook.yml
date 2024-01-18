@@ -72,7 +72,7 @@
       group: admin
       mode: '0755'
   - name: run docker-compose
-    command: docker compose -f /home/admin/docker-compose.global.yml up -d
+    command: dockercompose -f /home/admin/docker-compose.global.yml up -d
     args:
       chdir: /home/admin
   

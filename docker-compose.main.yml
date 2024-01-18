@@ -1,8 +1,6 @@
 services:
   app:
-    build:
-      context: .
-      target: app
+    image: ghcr.io/alexispet/final-test-theotruvelot/app:main
     environment:
       - NODE_ENV=development
       - DB_HOST=${DB_HOST}
