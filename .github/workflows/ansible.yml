@@ -18,3 +18,9 @@ jobs:
                 options:
                     --inventory inventory.ini
                     --extra-vars env=${{github.ref_name}}
+            - name: Shoutrrr
+              uses: containrrr/shoutrrr-action@v1
+              with:
+                url: ${{ secrets.WEBHOOK_URL }}
+                title: Deployed on server ${{github.ref_name}}
+                message: See changes at ${{ github.event.compare }}.
