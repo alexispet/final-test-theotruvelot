@@ -45,7 +45,7 @@
       enabled: yes
   - name: create folders
     file:
-      path: "/home/admin/{{ item }}"
+      path: "/home/admin/{{ env }}"
       state: directory
       owner: admin
       group: admin
