@@ -1,14 +1,15 @@
 services:
   watchtower:
     image: containrrr/watchtower
-    container_name: watchtower
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    command: --interval 30 --cleanup --label-enable
-    restart: unless-stopped
+    command: --interval 30 --label-enable
+  
   traefik:
     image: "traefik:v2.6"
     container_name: "traefik"
+    networks:
+      - frontend
     command:
       - "--log.level=DEBUG"
       - "--api.insecure=true"
@@ -28,3 +29,8 @@ services:
     volumes:
       - "./letsencrypt:/letsencrypt"
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
+  
+networks:
+  frontend:
+    driver: bridge
+    name: custom_frontend

@@ -10,6 +10,13 @@ services:
       - DB_USER=${DB_USER}
       - DB_PASSWORD=${DB_PASSWORD}
     command: ["npm", "run", "start"]
+    networks:
+      - frontend
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+      - "traefik.enable=true"
+      - "traefik.http.routers.next-prod.rule=Host(`ec2-3-84-52-185.compute-1.amazonaws.com`)"
+      - "traefik.http.routers.next-prod.entrypoints=websecure"
   mariadb:
     image: mariadb:11.2.2
     environment:
@@ -27,3 +34,8 @@ services:
       timeout: 20s
       retries: 10
 
+
+networks:
+  frontend:
+    external: true
+    name: custom_frontend

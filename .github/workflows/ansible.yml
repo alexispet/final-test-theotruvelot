@@ -23,4 +23,4 @@ jobs:
               with:
                 url: ${{ secrets.WEBHOOK_URL }}
                 title: Deployed on server ${{github.ref_name}}
-                message: ${{github.ref_name}} deployed on server with all changes
+                message: ${{github.ref_name}} deployed on server with all changes 

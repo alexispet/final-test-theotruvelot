@@ -21,7 +21,7 @@
 - [x] Vous avez un playbook Ansible qui installe docker sur le serveur.
 
 Bonus :
-- [ ] Vous avez un playbook Ansible qui copie les fichiers docker-compose du projet sur le serveur. 
+- [x] Vous avez un playbook Ansible qui copie les fichiers docker-compose du projet sur le serveur. 
   Ce playbook peut-être lancé manuellement via un workflow GitHub. 
   Vous envoyez une notification quand le playbook est lancé.
 
