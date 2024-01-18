@@ -2,7 +2,7 @@ services:
   app:
     build:
       context: .
-      target: release
+      target: app
     environment:
       - NODE_ENV=development
       - DB_HOST=${DB_HOST}
