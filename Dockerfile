@@ -22,22 +22,3 @@ RUN chmod +x /usr/local/bin/docker-entrypoint
 ENTRYPOINT ["docker-entrypoint"]
 
 CMD ["npm", "run", "start"]
-
-
-FROM node:21.6-alpine3.18 AS test
-
-WORKDIR /app
-
-COPY --from=build /app/node_modules .
-COPY --from=build /app/package.json .
-COPY --from=build /app/database .
-COPY --from=build /app/app.js .
-COPY --from=build /app/test .
-
-EXPOSE 3000
-COPY /docker/app/docker-entrypoint.sh /usr/local/bin/docker-entrypoint
-RUN chmod +x /usr/local/bin/docker-entrypoint
-
-ENTRYPOINT ["docker-entrypoint"]
-
-CMD ["npm", "run", "test"]
