@@ -34,6 +34,13 @@ jobs:
         uses: snyk/actions/node@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+  eslint:
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v4
+        - name: Run ESLint
+          run: eslint . 
+    
   # lint:
   #   runs-on: ubuntu-latest
   #   permissions:
@@ -51,7 +58,7 @@ jobs:
   #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   build-docker:
     runs-on: ubuntu-latest
-    needs: [tests, security]
+    needs: [tests, security, eslint]
     permissions:
       contents: read
       packages: write

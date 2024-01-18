@@ -28,9 +28,12 @@ app.get('/post', async (req, res) => {
     console.error(err);
     res.status(500).json({ error: 'Erreur lors de la récupération des posts' });
   } finally {
-    if (conn) return conn.end();
+    if (conn) {
+      conn.end();
+    }
   }
 });
+
 
 function findAvailablePort() {
   return new Promise((resolve, reject) => {
