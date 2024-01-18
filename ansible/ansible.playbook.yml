@@ -1,0 +1,46 @@
+---
+- name: Add docker
+  hosts: webservers
+  remote_user: admin
+  become: true
+  become_method: sudo
+
+  tasks:
+  - name: install dependencies
+    apt:
+      name: 
+        - apt-transport-https
+        - ca-certificates
+        - curl
+        - gnupg
+        - software-properties-common
+      state: latest
+      update_cache: yes
+  - name: add GPG key
+    apt_key:
+      url: https://download.docker.com/linux/ubuntu/gpg
+      state: present
+  - name: add docker repository to apt
+    apt_repository:
+      repo: deb https://download.docker.com/linux/ubuntu bionic stable
+      state: present
+  - name: install docker
+    apt:
+      name: 
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
+        - docker-compose-plugin
+      state: latest
+      update_cache: yes        
+  - name: add user to docker group
+    user:
+      name: admin
+      groups: docker
+      append: yes
+  - name: check docker status
+    service:
+      name: docker
+      state: started
+      enabled: yes
+  

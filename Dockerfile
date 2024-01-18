@@ -6,7 +6,7 @@ WORKDIR /app
 
 RUN npm install
 
-FROM node:21.6-alpine3.18 AS release
+FROM node:21.6-alpine3.18 AS app
 
 WORKDIR /app
 
