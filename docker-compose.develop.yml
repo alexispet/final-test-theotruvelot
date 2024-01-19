@@ -16,6 +16,9 @@ services:
       - "traefik.http.routers.develop-app-1.rule=Host(`dev.theotruvelot.fr`)"
       - "traefik.http.routers.develop-app-1.entrypoints=websecure"
       - "traefik.http.routers.develop-app-1.tls.certresolver=myresolver"
+    depends_on:
+      mariadb:
+        condition: service_healthy
   mariadb:
     image: mariadb:11.2.2
     environment:

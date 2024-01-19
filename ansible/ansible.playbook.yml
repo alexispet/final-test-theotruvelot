@@ -50,16 +50,17 @@
       owner: admin
       group: admin
       mode: '0755'
-  - name: create files
+  - name: delete files
     file:
       path: "/home/admin/{{ env }}/.env"
-      state: touch
+      state: absent
       owner: admin
       group: admin
       mode: '0755'
   - name: write in files
     blockinfile:
       path: "/home/admin/{{ env }}/.env"
+      create: true
       block: |
         DB_HOST={{ DB_HOST }}  
         DB_DATABASE={{ DB_DATABASE }}
