@@ -71,10 +71,14 @@
       owner: admin
       group: admin
       mode: '0755'
-  - name: run docker-compose
+  - name: run docker-compose global
     command: docker compose -f /home/admin/docker-compose.global.yml up -d
     args:
       chdir: /home/admin
+  - name: run docker-compose {{ env }}
+    command: docker compose -f /home/admin/{{ env }}/docker-compose.{{ env }}.yml up -d
+    args:
+      chdir: /home/admin/{{ env }}
   
 
   
