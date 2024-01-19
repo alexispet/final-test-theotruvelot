@@ -12,11 +12,11 @@
 - [x] Les identifiants de connexion à la base de données de prod ne sont jamais visibles dans le code versionné
 - [x] Vous avez eslint de fonctionnel en local et sur le workflow GitHub
 - [x] Vous avez docker-compose.prod.yml permettant de lancer l’application en mode prod
-- [ ] Sur le serveur, l’application de production est accessible et fonctionnelle sur le port 80
-- [ ] Sur le serveur, vous utilisez watchtower (ou similaire) pour mettre à jour l’application sur le serveur
-- [ ] Sur le serveur, vous déployez un environnement de production et un environnement de développement
-- [ ] Dans un workflow GitHub, lighthouse est lancé tous les jours pour auditer les performances de l’application de production
-- [ ] Sur le serveur, l’application de production et de développement sont accessibles en https
+- [x] Sur le serveur, l’application de production est accessible et fonctionnelle sur le port 80
+- [x] Sur le serveur, vous utilisez watchtower (ou similaire) pour mettre à jour l’application sur le serveur
+- [x] Sur le serveur, vous déployez un environnement de production et un environnement de développement
+- [x] Dans un workflow GitHub, lighthouse est lancé tous les jours pour auditer les performances de l’application de production
+- [x] Sur le serveur, l’application de production et de développement sont accessibles en https
 - [x] Envoyer une notification (email, slack, discord...) quand un environnement est déployé
 - [x] Vous avez un playbook Ansible qui installe docker sur le serveur.
 

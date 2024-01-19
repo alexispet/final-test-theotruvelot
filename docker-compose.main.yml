@@ -13,8 +13,8 @@ services:
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
       - "traefik.enable=true"
-      - "traefik.http.routers.next-prod.rule=Host(`ec2-54-211-46-185.compute-1.amazonaws.com`)"
-      - "traefik.http.routers.next-prod.entrypoints=websecure"
+      - "traefik.http.routers.main-app-1.rule=Host(`ec2-54-211-46-185.compute-1.amazonaws.com`)"
+      - "traefik.http.routers.main-app-1.entrypoints=websecure"
   mariadb:
     image: mariadb:11.2.2
     environment:
