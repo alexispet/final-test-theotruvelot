@@ -1,8 +1,10 @@
 name: ansible
 on: [workflow_dispatch]
 
+
 jobs:
     triger-ansible:
+        environment: ${{ github.ref_name }}
         runs-on: ubuntu-latest
         if: github.ref_name == 'develop' || github.ref_name == 'main'
         steps:
