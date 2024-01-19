@@ -68,6 +68,12 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+      - name: Shoutrrr
+        uses: containrrr/shoutrrr-action@v1
+        with:
+          url: ${{ secrets.WEBHOOK_URL }}
+          title: Deployed on server ${{github.ref_name}} 
+          message: commit ${{github.sha}} by ${{github.actor}} was deployed on server
   build-docker-development:
     runs-on: ubuntu-latest
     needs: [security, eslint]
@@ -99,3 +105,9 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+      - name: Shoutrrr
+        uses: containrrr/shoutrrr-action@v1
+        with:
+          url: ${{ secrets.WEBHOOK_URL }}
+          title: Deployed on server ${{github.ref_name}} 
+          message: commit ${{github.sha}} by ${{github.actor}} was deployed on server
