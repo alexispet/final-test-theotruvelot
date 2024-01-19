@@ -58,9 +58,9 @@
       group: admin
       mode: '0755'
   - name: write in files
-    lineinfile:
+    blockinfile:
       path: "/home/admin/{{ env }}/.env"
-      line: |
+      block: |
       DB_HOST={{ DB_HOST }}  
       DB_DATABASE={{ DB_DATABASE }}
       DB_PASSWORD={{ DB_PASSWORD }}
