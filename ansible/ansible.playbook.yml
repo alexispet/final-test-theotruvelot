@@ -57,6 +57,11 @@
       owner: admin
       group: admin
       mode: '0755'
+  - name: write in files
+    lineinfile:
+      path: "/home/admin/{{ env }}/.env"
+      line: "DB_HOST={{ DB_HOST }} DB_DATABASE={{ DB_DATABASE }} DB_PASSWORD={{ DB_PASSWORD }} DB_USER={{ DB_USER }}"
+    
   - name: send by scp docker-compose file to remote host
     copy:
       src: /home/runner/work/final-test-theotruvelot/final-test-theotruvelot/docker-compose.global.yml
