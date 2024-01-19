@@ -10,6 +10,7 @@ services:
     command: ["npm", "run", "start"]
     networks:
       - frontend
+      - backend
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
       - "traefik.enable=true"
@@ -28,6 +29,8 @@ services:
       - MYSQL_PASSWORD=${DB_PASSWORD}
     volumes:
       - ./docker/database/data:/var/lib/mysql
+    networks:
+      - backend
     ports:
       - 3306:3306
     healthcheck:
@@ -41,3 +44,4 @@ networks:
   frontend:
     external: true
     name: custom_frontend
+  backend:
