@@ -31,8 +31,6 @@ services:
       - ./docker/database/data:/var/lib/mysql
     networks:
       - backend
-    ports:
-      - 3306:3306
     healthcheck:
       test: [ "CMD", "healthcheck.sh", "--su-mysql", "--connect", "--innodb_initialized" ]      
       interval: 5s
