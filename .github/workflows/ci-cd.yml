@@ -7,7 +7,7 @@ env:
 on: [push]
 jobs:
   tests:
-    environment: development
+    environment: ${{ github.ref_name }}
     runs-on: ubuntu-latest
     env: 
       MYSQL_RANDOM_ROOT_PASSWORD: ${{ secrets.MYSQL_RANDOM_ROOT_PASSWORD }}
@@ -43,7 +43,7 @@ jobs:
     needs: [security, eslint]
     if: github.ref_name == 'main'
     environment: 
-        name: production
+        name: ${{ github.ref_name }}
         url: https://prod.theotruvelot.fr
     permissions:
       contents: read
@@ -74,7 +74,7 @@ jobs:
     needs: [security, eslint]
     if: github.ref_name == 'develop'
     environment:
-        name: development
+        name: ${{ github.ref_name }}
         url: https://dev.theotruvelot.fr
     permissions:
       contents: read
