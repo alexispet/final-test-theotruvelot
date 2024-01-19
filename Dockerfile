@@ -10,6 +10,8 @@ FROM node:21.6-alpine3.18 AS app
 
 WORKDIR /app
 
+RUN apk add curl
+
 COPY --from=build /app/node_modules ./node_modules
 COPY --from=build /app/package.json .
 COPY --from=build /app/database ./database
