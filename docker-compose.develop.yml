@@ -13,9 +13,9 @@ services:
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
       - "traefik.enable=true"
-      - "traefik.http.routers.main-app-1.rule=Host(`54.211.46.185`)"
-      - "traefik.http.routers.main-app-1.entrypoints=websecure"
-      - "traefik.http.routers.main-app-1.tls.certresolver=myresolver"
+      - "traefik.http.routers.develop-app-1.rule=Host(`dev.theotruvelot.fr`)"
+      - "traefik.http.routers.develop-app-1.entrypoints=websecure"
+      - "traefik.http.routers.develop-app-1.tls.certresolver=myresolver"
   mariadb:
     image: mariadb:11.2.2
     environment:
