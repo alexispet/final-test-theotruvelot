@@ -44,7 +44,7 @@ jobs:
     if: github.ref_name == 'main'
     environment: 
         name: production
-        url: https://example.com
+        url: https://prod.theotruvelot.fr
     permissions:
       contents: read
       packages: write
@@ -75,7 +75,7 @@ jobs:
     if: github.ref_name == 'develop'
     environment:
         name: development
-        url: https://example.com
+        url: https://dev.theotruvelot.fr
     permissions:
       contents: read
       packages: write
