@@ -1,15 +1,15 @@
-name: Lighthouse CI
-on:
-    schedule:
-        - cron: '0 0 * * *'
-    workflow_dispatch:
+# name: Lighthouse CI
+# on:
+#     schedule:
+#         - cron: '0 0 * * *'
+#     workflow_dispatch:
 
-jobs:
-  lighthouse:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@master
-    - name: Lighthouse
-      uses: foo-software/lighthouse-check-action@master
-      with:
-        urls: 'https://prod.theotruvelot.fr,https://dev.theotruvelot.fr/post'
+# jobs:
+#   lighthouse:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@master
+#     - name: Lighthouse
+#       uses: foo-software/lighthouse-check-action@master
+#       with:
+#         urls: 'https://prod.theotruvelot.fr,https://dev.theotruvelot.fr/post'
